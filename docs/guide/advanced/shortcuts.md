@@ -1,14 +1,11 @@
 # 快捷键设置
 
-TabPaint的设置中可以根据习惯重新绑定所有功能的快捷键。
-
 ::: info 设置路径
 点击窗口右上角的齿轮图标 <span style="vertical-align: middle;"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.1.34a1.464 1.464 0 0 1-2.105.872l-.31-.17c-1.283-.698-2.686.705-1.987 1.987l.169.311c.446.82.023 1.841-.872 2.105l-.34.1c-1.4.413-1.4 2.397 0 2.81l.34.1a1.464 1.464 0 0 1 .872 2.105l-.17.31c-.698 1.283.705 2.686 1.987 1.987l.311-.169a1.464 1.464 0 0 1 2.105.872l.1.34c.413 1.4 2.397 1.4 2.81 0l.1-.34a1.464 1.464 0 0 1 2.105-.872l.31.17c1.283.698 2.686-.705 1.987-1.987l-.169-.311a1.464 1.464 0 0 1 .872-2.105l.34-.1c1.4-.413 1.4-2.397 0-2.81l-.34-.1a1.464 1.464 0 0 1-.872-2.105l.17-.31c.698-1.283-.705-2.686-1.987-1.987l-.311.169a1.464 1.464 0 0 1-2.105-.872l-.1-.34zM8 10.93a2.929 2.929 0 1 1 0-5.86 2.929 2.929 0 0 1 0 5.86z"/></svg></span> 进入 **设置** -> 切换到 **快捷键设置** 选项卡。
 :::
 
 ## 视图与导航 (View & Navigation)
 
-控制画布的显示模式、翻页和旋转。
 
 | 功能名称 | 默认快捷键 | 描述 |
 | :--- | :--- | :--- |
@@ -28,7 +25,7 @@ TabPaint的设置中可以根据习惯重新绑定所有功能的快捷键。
 | 功能名称 | 默认快捷键 | 描述 |
 | :--- | :--- | :--- |
 | **选择工具** | <kbd>Ctrl</kbd> + <kbd>1</kbd> | 矩形选框工具 |
-| **铅笔** | <kbd>Ctrl</kbd> + <kbd>2</kbd> | 基础硬笔，用于标注或书写 |
+| **铅笔** | <kbd>Ctrl</kbd> + <kbd>2</kbd> | 基础硬笔|
 | **取色器** | <kbd>Ctrl</kbd> + <kbd>3</kbd> | 吸取画布上的颜色 |
 | **橡皮擦** | <kbd>Ctrl</kbd> + <kbd>4</kbd> | 擦除内容 |
 | **填充工具** | <kbd>Ctrl</kbd> + <kbd>5</kbd> | 填充颜色 |
@@ -44,19 +41,19 @@ TabPaint的设置中可以根据习惯重新绑定所有功能的快捷键。
 | 功能名称 | 默认快捷键 | 描述 |
 | :--- | :--- | :--- |
 | **监听剪贴板开关** | <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>P</kbd> | 开启/关闭剪贴板自动导入功能 |
-| **AI 移除背景** | <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>1</kbd> | 智能识别主体并去除背景 (AI抠图) |
-| **色差抠图 (绿幕)** | <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>2</kbd> | 针对纯色背景的 Chroma Key 抠图 |
+| **AI 移除背景** | <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>1</kbd> | 智能去除背景 |
+| **色差抠图** | <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>2</kbd> | 色差抠图 |
 | **OCR 文字识别** | <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>3</kbd> | 识别图片中的文字并复制到剪贴板 |
 | **屏幕取色器** | <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>4</kbd> | 获取屏幕上任意位置的颜色 |
-| **复制当前颜色 HEX** | <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>5</kbd> | 将当前前景色以 HEX 格式 (#FFFFFF) 复制 |
+| **复制当前颜色 HEX** | <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>5</kbd> | 将鼠标位置颜色以 HEX 格式复制 |
 | **智能裁切空白边缘** | <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>6</kbd> | 自动切除图片四周的透明或纯白区域 |
-| **图片加边框** | <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>7</kbd> | 快速为图片添加装饰性边框或阴影 |
+| **图片加边框** | <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>7</kbd> | 为图片添加2px边框 |
 
 ## 其他文件操作 (File Operations)
 
 | 功能名称 | 默认快捷键 | 描述 |
 | :--- | :--- | :--- |
-| **打开工作区** | <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>O</kbd> | 打开图片或加载缓存目录 |
+| **打开工作区** | <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>O</kbd> | 打开新文件夹，同时关闭现有所有图片 |
 | **粘贴为新标签页** | <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>V</kbd> | 将剪贴板内容直接作为新 Tab 打开 |
 
 ## 图像效果 (Image Effects)
@@ -68,7 +65,7 @@ TabPaint的设置中可以根据习惯重新绑定所有功能的快捷键。
 | **亮度/对比度/曝光** | <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>R</kbd> | 调节图片的明暗与对比度 |
 | **色温/色调/饱和度** | <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>T</kbd> | 调节图片的冷暖色温 |
 | **黑白** | <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>Y</kbd> | 将图片转换为灰度图 |
-| **反色** | <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>U</kbd> | 颜色反转 (底片效果) |
+| **反色** | <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>U</kbd> | 底片效果 |
 | **自动色阶** | <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>I</kbd> | 自动调整图片的直方图分布 |
 | **调整大小** | <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>O</kbd> | 修改图片的分辨率/尺寸 |
 

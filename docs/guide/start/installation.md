@@ -10,13 +10,12 @@ TabPaint 支持 **Windows 10** 和 **Windows 11** 操作系统。
 
 ## 版本选择
 
-为了满足不同用户的需求，我们提供了三个版本的安装包。请根据您的网络环境和使用习惯选择：
 
 | 文件名 | 版本类型 | 说明与建议 |
 | :--- | :--- | :--- |
-| **TabPaint_Setup_Full.exe** | 完整安装包 | **✅ 推荐 **<br>安装包内**已包含**运行库，体积稍大 |
-| **TabPaint_Setup_Lite.exe** | 在线安装包 | **轻量级**<br>安装包体积小。安装过程中会自动从微软服务器下载所需的运行库。 |
-| **TabPaint_Portable.zip** | 绿色便携版 | **免安装**<br>解压即用，需要手动确保系统已安装 .NET 8.0 运行库。 |
+| **TabPaint_Setup_Full.exe** | 完整安装包 | 安装包内**已包含**运行库，体积稍大 |
+| **TabPaint_Setup_Lite.exe** | 在线安装包 | 安装包体积小，自动从微软服务器下载运行库 |
+| **TabPaint_Portable.zip** | 绿色便携版 | 解压即用，需手动安装运行库 |
 
 ## 安装步骤
 
@@ -25,9 +24,10 @@ TabPaint 支持 **Windows 10** 和 **Windows 11** 操作系统。
 2. 双击运行安装程序。
 3. 按照提示完成安装，安装完成后可在开始菜单或桌面找到 TabPaint 图标。
 
+![TabPaint 主界面](/installation.png)
 ### 使用便携版 (Portable)
 1. 下载 `TabPaint_Portable.zip`。
-2. 将压缩包解压到任意文件夹（建议不要放在 C 盘根目录以免权限不足）。
+2. 将压缩包解压到任意文件夹。
 3. 进入文件夹，找到 `TabPaint.exe` 双击运行。
 
 ## 功能依赖组件
