@@ -1,6 +1,7 @@
 import { defineConfig } from 'vitepress'
 
 export default defineConfig({
+  base: '/tabpaint-site/', 
   title: "TabPaint",
   description: "更好用的轻量图片编辑器",
   head: [['link', { rel: 'icon', href: '/logo.png' }]], // 记得放 logo.png 到 public 目录
