@@ -233,7 +233,7 @@ import { VPButton } from 'vitepress/theme'
   </div>
   <div class="image-content">
     <!-- 这里放你的主窗口截图 -->
-    <img src="/screenshot-main.png" alt="Tabpaint 主界面" />
+    <img src="/screenshot-main.webp" alt="Tabpaint 主界面" />
   </div>
 </div>
 

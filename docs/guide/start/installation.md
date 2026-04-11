@@ -24,7 +24,7 @@ TabPaint 支持 **Windows 10** 和 **Windows 11** 操作系统。
 2. 双击运行安装程序。
 3. 按照提示完成安装，安装完成后可在开始菜单或桌面找到 TabPaint 图标。
 
-![TabPaint 主界面](/installation.png)
+![TabPaint 主界面](/installation.webp)
 ### 使用便携版 (Portable)
 1. 下载 `TabPaint_Portable.zip`。
 2. 将压缩包解压到任意文件夹。
