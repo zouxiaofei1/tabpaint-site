@@ -230,7 +230,7 @@ import { VPButton } from 'vitepress/theme'
     <a href="https://github.com/zouxiaofei1/TabPaint/releases" class="download-btn">Download for Windows</a>
   </div>
   <div class="image-content">
-    <img src="/screenshot-main.png" alt="TabPaint Main Interface" />
+    <img src="/screenshot-main.webp" alt="TabPaint Main Interface" />
   </div>
 </div>
 
