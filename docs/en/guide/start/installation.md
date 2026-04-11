@@ -23,7 +23,7 @@ TabPaint supports **Windows 10** and **Windows 11** operating systems.
 2. Double-click to run the installer.
 3. Follow the prompts to complete installation. Once finished, you can find the TabPaint icon in the Start menu or on your desktop.
 
-![TabPaint Main Interface](/installation.webp)
+![TabPaint Main Interface](/en/installation.webp)
 
 ### Using Portable Version
 1. Download `TabPaint_Portable.zip`.

@@ -25,5 +25,5 @@ When doodling, cropping, or adjusting in TabPaint, all modifications **are not i
 | Button Function | Description |
 | :--- | :--- |
 | **💾 Save All Edited Images** | Writes all modifications to the original files. |
-| **❌ Close All Unedited Images** | Cleans up the workspace, keeping only the modified images. |
+| **�?Close All Unedited Images** | Cleans up the workspace, keeping only the modified images. |
 | **↩️ Discard All Changes** | Clears the cache and resets to the original state on disk. |

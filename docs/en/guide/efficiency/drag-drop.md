@@ -10,7 +10,7 @@ Dragging a selected area outside the program window can trigger these actions:
 - **Drag to Desktop/Folder**: Generates a temporary image file (`.png`) containing the selection.
 - **Drag to Word/PPT/WeChat**: Inserts the selection as an image into the document.
 
-![Drag & Drop](/drag-drop-1.gif)
+![Drag & Drop](/en/drag-drop-1.gif)
 
 ### Drag Full Image (Thumbnail)
 Dragging an image tab outside the program window can trigger these actions:
@@ -33,7 +33,7 @@ When dragging image files from the desktop or File Explorer into TabPaint:
 | **Image Bar Area** | Opens the image as a **new tab**. |
 | **Title Bar Area** | **Switches Workspace**, loading the folder containing the image as the current working directory. |
 
-![Drag & Drop](/drag-drop-2.gif)
+![Drag & Drop](/en/drag-drop-2.gif)
 
 ### Clipboard Listening
 After enabling listening mode with `Ctrl + Alt + P`, TabPaint will automatically open new screenshots as new tabs.
@@ -46,7 +46,7 @@ After enabling listening mode with `Ctrl + Alt + P`, TabPaint will automatically
 2. Drag the selection and move it over the **thumbnail of Image B**.
 3. **Wait for 1s**, the view will switch to Image B, carrying the selected content.
 
-![Drag & Drop](/drag-drop-3.gif)
+![Drag & Drop](/en/drag-drop-3.gif)
 
 ### Dragging Other Image Tabs to Canvas
 Adds the image as a selection.

@@ -4,7 +4,7 @@
 
 Right-click on the canvas -> Utilities -> click `AI One-click Background Removal`, and wait a moment.
 
-![AI Background Removal Comparison](/gif-ai-workflow.gif)
+![AI Background Removal Comparison](/en/gif-ai-workflow.gif)
 
 ---
 
@@ -12,7 +12,7 @@ Right-click on the canvas -> Utilities -> click `AI One-click Background Removal
 
 Select text in the image (unselected will recognize the full image), right-click on the canvas -> Utilities -> click `Extract Text (OCR)`, and the recognition results will be automatically copied to the clipboard.
 
-::: tip âš¡ Tip
+::: tip âš?Tip
 This is an experimental feature; results are not guaranteed.
 :::
 

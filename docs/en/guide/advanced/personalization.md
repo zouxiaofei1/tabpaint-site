@@ -2,7 +2,7 @@
 
 ### General Settings
 
-![General Settings Interface](/settings-general.webp)
+![General Settings Interface](/en/settings-general.webp)
 
 *   **Auto-load images in same folder**: When enabled, opening an image will prompt TabPaint to scan for other images in the same directory.
 *   **Default to View Mode**: When enabled, the software will automatically hide all toolbars upon startup, functioning as a pure image viewer.
@@ -14,7 +14,7 @@
 
 ### View Settings
 
-![View Settings Interface](/settings-paint.webp)
+![View Settings Interface](/en/settings-paint.webp)
 
 *   **Mouse Wheel Function**: 
     *   **Zoom Image**: Wheel adjusts zoom.
@@ -25,7 +25,7 @@
 
 ### Drawing Settings
 
-![Drawing Settings Interface](/settings-view.webp)
+![Drawing Settings Interface](/en/settings-view.webp)
 
 *   **Auto-popup Clipboard Images**: 
     *   When enabled, the TabPaint window will automatically bring itself to the front and activate once a new image is detected in the system clipboard.
@@ -38,7 +38,7 @@
 
 ## Advanced Settings
 
-![Advanced Settings Interface](/settings-advanced.webp)
+![Advanced Settings Interface](/en/settings-advanced.webp)
 
 *   **Resampling Algorithm**:
     *   Controls the algorithm used when scaling or saving images (e.g., Bilinear, Nearest Neighbor).
