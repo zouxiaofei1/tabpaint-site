@@ -3,6 +3,7 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   base: '/', 
   head: [['link', { rel: 'icon', href: '/TabPaint.ico' }]],
+  lastUpdated: true,
 
   locales: {
     root: {

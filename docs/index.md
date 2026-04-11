@@ -1,6 +1,7 @@
 ---
 layout: home
 title: TabPaint - 轻量图片编辑
+titleTemplate: false
 ---
 
 <script setup>
@@ -225,7 +226,7 @@ import { VPButton } from 'vitepress/theme'
 <!-- 第一屏：主屏 -->
 <div class="section-container">
   <div class="text-content">
-    <h1 class="hero-title">TabPaint,</h1>
+    <h1 class="hero-title">TabPaint</h1>
     <p class="hero-slogan">更好用的轻量图片编辑器</p>
     <p>专为效率设计：多标签页管理、Tab 键极速切换看图/修图模式。<br>集成 AI 抠图与无缝剪贴板，让截图处理快如闪电。</p>
     <br>

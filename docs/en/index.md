@@ -1,6 +1,7 @@
 ---
 layout: home
 title: TabPaint - Lightweight Image Editing
+titleTemplate: false
 ---
 
 <script setup>
