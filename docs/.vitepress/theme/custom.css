@@ -54,6 +54,19 @@
   z-index: 9999;
 }
 
-.dark::view-transition-new(root) {
-  z-index: 1;
-}
+  .dark::view-transition-new(root) {
+    z-index: 1;
+  }
+  
+  @keyframes fade-up-blur {
+    from {
+      opacity: 0;
+      filter: blur(10px);
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      filter: blur(0);
+      transform: translateY(0);
+    }
+  }

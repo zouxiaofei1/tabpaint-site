@@ -4,8 +4,8 @@ import { useData } from 'vitepress'
 import './custom.css'
 import LastUpdatedDays from './components/LastUpdatedDays.vue'
 import GiscusComment from './components/GiscusComment.vue'
-import ThemeColorPicker from './components/ThemeColorPicker.vue'
 import ScrollProgress from './components/ScrollProgress.vue'
+import MobileBanner from './components/MobileBanner.vue'
 
 export default {
   extends: DefaultTheme,
@@ -58,8 +58,7 @@ export default {
       })
 
       return () => h(DefaultTheme.Layout, null, {
-        'layout-top': () => h(ScrollProgress),
-        'nav-bar-content-after': () => h(ThemeColorPicker),
+        'layout-top': () => [h(MobileBanner), h(ScrollProgress)],
         'doc-footer-before': () => h(LastUpdatedDays),
         'doc-after': () => h(GiscusComment)
       })

@@ -191,29 +191,33 @@ onMounted(() => {
 
 .hero-section {
   flex-direction: column !important;
-  text-align: center;
-  padding-top: 0px !important;
+  text-align: left;
+  padding-top: 100px !important;
   padding-bottom: 0 !important;
   max-width: 1200px !important;
-  gap: 0 !important;
+  gap: 60px !important;
+  align-items: flex-start;
 }
 
 .hero-section .text-content {
-  max-width: 800px;
-  margin: 0 auto;
+  max-width: 70%;
+  margin: 0;
   flex: none;
-  min-height: 70vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 .hero-section .image-content {
   width: 100%;
-  max-width: 1100px;
-  margin: 0 auto;
+  max-width: 100%;
+  margin: 0;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
+  /* 动画 */
+  opacity: 0;
+  animation: fade-up-blur 1s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+  animation-delay: 0.3s;
 }
 
 .text-content {
@@ -238,10 +242,14 @@ onMounted(() => {
 .hero-title {
   font-size: 46px !important;
   font-weight: 900;
-  line-height: 1;
-  margin: -120px 0 16px 0;
+  line-height: 1.1;
+  margin: 0 0 24px 0;
   color: var(--tp-c-brand);
   letter-spacing: -2px;
+  /* 动画 */
+  opacity: 0;
+  animation: fade-up-blur 1s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+  animation-delay: 0.03s;
 }
 
 .hero-slogan {
@@ -250,6 +258,10 @@ onMounted(() => {
   margin-bottom: 24px;
   font-weight: 700;
   letter-spacing: -0.5px;
+  /* 动画 */
+  opacity: 0;
+  animation: fade-up-blur 1s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+  animation-delay: 0.1s;
 }
 
 .hero-desc {
@@ -257,6 +269,10 @@ onMounted(() => {
   line-height: 1.8;
   color: var(--vp-c-text-2);
   margin-bottom: 40px;
+  /* 动画 */
+  opacity: 0;
+  animation: fade-up-blur 1s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+  animation-delay: 0.15s;
 }
 
 .download-btn {
@@ -289,10 +305,14 @@ onMounted(() => {
 .download-group {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 24px;
   margin-top: 8px;
   flex-wrap: wrap;
+  /* 动画 */
+  opacity: 0;
+  animation: fade-up-blur 1s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+  animation-delay: 0.3s;
 }
 
 .download-icon {
@@ -336,7 +356,39 @@ onMounted(() => {
   color: var(--tp-c-brand);
 }
 
+.version-tag {
+  padding: 12px 0 0 0;
+  font-size: 12px;
+  color: var(--vp-c-text-3);
+  font-weight: 500;
+}
 
+.download-sub-links {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 16px;
+  font-size: 14px;
+  color: var(--vp-c-text-2);
+  /* 动画 */
+  opacity: 0;
+  animation: fade-up-blur 1s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+  animation-delay: 0.35s;
+}
+
+.download-sub-links a {
+  color: var(--vp-c-text-2);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.download-sub-links a:hover {
+  color: var(--tp-c-brand);
+}
+
+.link-divider {
+  color: var(--vp-c-divider);
+}
 
 .image-content {
   flex: 1.3;
@@ -410,7 +462,11 @@ onMounted(() => {
 }
 
 /* 手机端适配 */
-@media (max-width: 960px) {
+@media (max-width: 900px) {
+  .hero-section .text-content {
+    max-width: 100%;
+  }
+
   .section-container {
     flex-direction: column-reverse;
     text-align: center;
@@ -419,22 +475,27 @@ onMounted(() => {
   }
 
   .hero-section {
+    flex-direction: column !important;
+    align-items: center;
+    text-align: center;
     height: auto !important;
     min-height: auto !important;
     padding-top: 40px !important;
     overflow: visible !important;
   }
 
+  .hero-section .download-group,
+  .download-sub-links {
+    justify-content: center;
+  }
+
   .hero-section .image-content {
     border-radius: 12px !important;
   }
-
-  .image-content {
-    padding: 20px;
-  }
   
   .hero-title {
-    font-size: 60px;
+    font-size: 40px !important;
+    margin-top: 0;
   }
   
   .text-content h2 {
@@ -462,9 +523,9 @@ onMounted(() => {
   <div class="text-content">
     <h1 class="hero-title">更好用的轻量图片编辑器</h1>
     <p class="hero-slogan"></p>
-    <p class="hero-desc">专为效率设计：多标签页管理、Tab 键极速切换看图/修图模式。集成 AI 抠图与无缝剪贴板，让截图处理快如闪电。</p>
+    <p class="hero-desc">多标签页、 <kbd>Tab</kbd> 模式切换、AI 集成、高效工作。</p>
     <div class="download-group">
-      <a href="https://github.com/zouxiaofei1/TabPaint/releases" class="download-btn">
+      <a href="https://github.com/zouxiaofei1/TabPaint/releases/download/v0.9.7.0/TabPaint_Setup_v0.9.7.0_Full.exe" class="download-btn">
         <img src="/ic_fluent_arrow_download_48_regular.svg" class="download-icon" alt="下载" />
         立即下载
       </a>
@@ -472,8 +533,15 @@ onMounted(() => {
         <a href="https://github.com/zouxiaofei1/TabPaint" target="_blank" class="github-link-icon" title="GitHub">
           <img src="/GitHub_Image.svg" alt="GitHub" />
         </a>
-        <a href="" class="backup-link">备用下载链接</a>
+        <span class="version-tag">最新版 v0.9.7</span>
       </div>
+    </div>
+    <div class="download-sub-links">
+      <a href="https://github.com/zouxiaofei1/TabPaint/releases/download/v0.9.7.0/TabPaint_v0.9.7.0_Portable.zip">绿色版</a>
+      <span class="link-divider">|</span>
+      <a href="https://wwauw.lanzouu.com/iyL203muc8ne">备用下载链接</a>
+      <span class="link-divider">|</span>
+      <a href="/guide/start/installation">安装失败解决方案</a>
     </div>
   </div>
   <div class="image-content">
@@ -636,11 +704,18 @@ onMounted(() => {
       免费下载 Windows 版
     </a>
     <div class="extra-links">
+      <span class="version-tag">最新版 v0.9.7</span>
       <a href="https://github.com/zouxiaofei1/TabPaint" target="_blank" class="github-link-icon" title="GitHub">
         <img src="/GitHub_Image.svg" alt="GitHub" />
       </a>
-      <a href="" class="backup-link">备用下载链接</a>
     </div>
+  </div>
+  <div class="download-sub-links">
+    <a href="https://github.com/zouxiaofei1/TabPaint/releases">绿色版</a>
+    <span class="link-divider">|</span>
+    <a href="https://wwauw.lanzouu.com/iyL203muc8ne">备用下载链接</a>
+    <span class="link-divider">|</span>
+    <a href="/guide/start/installation">安装失败解决方案</a>
   </div>
   <p style="margin-top: 32px; font-size: 16px;">
     <a href="https://github.com/zouxiaofei1/TabPaint" target="_blank" style="color: var(--tp-c-brand); font-weight: 600; text-decoration: none;">
