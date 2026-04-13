@@ -2,12 +2,12 @@
 import { ref, onMounted, onBeforeUnmount } from 'vue'
 
 const colors = [
-  { name: 'Windows Blue', value: '#0078d4' },
-  { name: 'Purple', value: '#646cff' },
-  { name: 'Green', value: '#42b883' },
-  { name: 'Orange', value: '#ff8c00' },
-  { name: 'Red', value: '#e81123' },
-  { name: 'Pink', value: '#ff69b4' }
+  { name: 'Windows Blue', value: '#0078d4', hue: '0deg' },
+  { name: 'Purple', value: '#646cff', hue: '250deg' },
+  { name: 'Green', value: '#42b883', hue: '150deg' },
+  { name: 'Orange', value: '#ff8c00', hue: '30deg' },
+  { name: 'Red', value: '#e81123', hue: '350deg' },
+  { name: 'Pink', value: '#ff69b4', hue: '320deg' }
 ]
 
 const currentColor = ref('#0078d4')
@@ -18,7 +18,7 @@ const togglePicker = () => {
   isOpen.value = !isOpen.value
 }
 
-const setThemeColor = (color) => {
+const setThemeColor = (color, hue) => {
   currentColor.value = color
   const root = document.documentElement
   root.style.setProperty('--vp-c-brand-1', color)
@@ -27,8 +27,10 @@ const setThemeColor = (color) => {
   root.style.setProperty('--vp-c-brand-2', lightenDarkenColor(color, 20))
   root.style.setProperty('--vp-c-brand-3', lightenDarkenColor(color, 40))
   root.style.setProperty('--vp-c-brand-soft', `${color}29`) // 16% opacity
+  root.style.setProperty('--tp-mica-hue', hue)
   
   localStorage.setItem('tabpaint-theme-color', color)
+  localStorage.setItem('tabpaint-theme-hue', hue)
   isOpen.value = false
 }
 
@@ -60,8 +62,9 @@ const handleClickOutside = (event) => {
 
 onMounted(() => {
   const savedColor = localStorage.getItem('tabpaint-theme-color')
-  if (savedColor) {
-    setThemeColor(savedColor)
+  const savedHue = localStorage.getItem('tabpaint-theme-hue')
+  if (savedColor && savedHue) {
+    setThemeColor(savedColor, savedHue)
   }
   window.addEventListener('click', handleClickOutside)
 })
@@ -89,7 +92,7 @@ onBeforeUnmount(() => {
           :style="{ backgroundColor: color.value }"
           :title="color.name"
           :class="{ active: currentColor === color.value }"
-          @click="setThemeColor(color.value)"
+          @click="setThemeColor(color.value, color.hue)"
         ></button>
       </div>
     </div>

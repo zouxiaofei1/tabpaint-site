@@ -6,6 +6,60 @@ titleTemplate: false
 
 <script setup>
 import { VPButton } from 'vitepress/theme'
+import { ref, onMounted } from 'vue'
+
+const colors = [
+  { name: 'Windows Blue', value: '#0078d4', hue: '0deg' },
+  { name: 'Purple', value: '#646cff', hue: '250deg' },
+  { name: 'Green', value: '#42b883', hue: '150deg' },
+  { name: 'Orange', value: '#ff8c00', hue: '30deg' },
+  { name: 'Red', value: '#e81123', hue: '350deg' },
+  { name: 'Pink', value: '#ff69b4', hue: '320deg' }
+]
+
+const currentColor = ref('#0078d4')
+
+const setThemeColor = (color, hue) => {
+  currentColor.value = color
+  const root = document.documentElement
+  root.style.setProperty('--vp-c-brand-1', color)
+  
+  // Calculate variations
+  root.style.setProperty('--vp-c-brand-2', lightenDarkenColor(color, 20))
+  root.style.setProperty('--vp-c-brand-3', lightenDarkenColor(color, 40))
+  root.style.setProperty('--vp-c-brand-soft', `${color}29`)
+  root.style.setProperty('--tp-mica-hue', hue)
+  
+  localStorage.setItem('tabpaint-theme-color', color)
+  localStorage.setItem('tabpaint-theme-hue', hue)
+}
+
+function lightenDarkenColor(col, amt) {
+  let usePound = false
+  if (col[0] === '#') {
+    col = col.slice(1)
+    usePound = true
+  }
+  let num = parseInt(col, 16)
+  let r = (num >> 16) + amt
+  if (r > 255) r = 255
+  else if (r < 0) r = 0
+  let b = ((num >> 8) & 0x00FF) + amt
+  if (b > 255) b = 255
+  else if (b < 0) b = 0
+  let g = (num & 0x0000FF) + amt
+  if (g > 255) g = 255
+  else if (g < 0) g = 0
+  return (usePound ? '#' : '') + (g | (b << 8) | (r << 16)).toString(16).padStart(6, '0')
+}
+
+onMounted(() => {
+  const savedColor = localStorage.getItem('tabpaint-theme-color')
+  const savedHue = localStorage.getItem('tabpaint-theme-hue')
+  if (savedColor && savedHue) {
+    setThemeColor(savedColor, savedHue)
+  }
+})
 </script>
 
 <style>
@@ -15,6 +69,11 @@ import { VPButton } from 'vitepress/theme'
   --tp-shadow-light: 0 4px 12px rgba(0, 0, 0, 0.05);
   --tp-shadow-medium: 0 12px 24px rgba(0, 0, 0, 0.1);
   --tp-shadow-heavy: 0 20px 40px rgba(0, 0, 0, 0.15);
+  --vp-c-bg-soft-transparent: rgba(246, 246, 247, 0);
+}
+
+.dark :root {
+  --vp-c-bg-soft-transparent: rgba(32, 32, 35, 0.7);
 }
 
 .shortcuts-section {
@@ -299,9 +358,10 @@ import { VPButton } from 'vitepress/theme'
   background-image: url('/mica-background.webp');
   background-size: cover;
   background-position: center;
-  filter: blur(5px) brightness(1.0);
+  filter: blur(5px) brightness(1.0) hue-rotate(var(--tp-mica-hue, 0deg));
   z-index: -1;
   opacity: 0.9;
+  transition: filter 0.5s ease;
 }
 
 /* 叠一层半透明白/黑，增加 Mica 的通透感 */
@@ -318,6 +378,35 @@ import { VPButton } from 'vitepress/theme'
   border-radius: 12px;
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
   border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.color-picker-container {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+  flex-wrap: wrap;
+}
+
+.color-rect {
+  width: 48px;
+  height: 32px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 2px solid var(--vp-c-divider);
+  transition: all 0.2s ease;
+  padding: 0;
+}
+
+.color-rect:hover {
+  transform: translateY(-2px);
+  border-color: var(--vp-c-brand-1);
+  box-shadow: 0 4px 12px var(--vp-c-brand-soft);
+}
+
+.color-rect.active {
+  border-color: var(--vp-c-text-1);
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 /* 手机端适配 */
@@ -393,7 +482,7 @@ import { VPButton } from 'vitepress/theme'
 </div>
 
 <!-- 第二屏：Tab画图看图切换 -->
-<div style="background-color: var(--vp-c-bg-soft);">
+<div style="background-color: var(--vp-c-bg-soft-transparent);">
   <div class="section-container section-reverse">
     <div class="text-content">
       <h2>Tab 键极速切换</h2>
@@ -417,7 +506,7 @@ import { VPButton } from 'vitepress/theme'
 </div>
 
 <!-- 第四屏：剪切板 -> AI抠图 -> Word -->
-<div style="background-color: var(--vp-c-bg-soft);">
+<div style="background-color: var(--vp-c-bg-soft-transparent);">
   <div class="section-container section-reverse">
     <div class="text-content">
       <h2>AI 赋能，打通最后一步</h2>
@@ -432,11 +521,35 @@ import { VPButton } from 'vitepress/theme'
 <!-- 第五屏：无需保存的极简画板 -->
 <div class="section-container">
   <div class="text-content">
-    <h2>无需手动保存的安心</h2>
+    <h2>无需手动保存</h2>
     <p>拥有缓存目录机制，在一张图片上涂抹后关闭，再次打开改动依然存在。专注于创作，忘记“Ctrl+S”。</p>
   </div>
   <div class="image-content">
     <img src="/gif-autosave.gif" alt="自动保存演示" />
+  </div>
+</div>
+
+<!-- 第六屏：高度自定义 -->
+<div style="background-color: var(--vp-c-bg-soft-transparent);">
+  <div class="section-container section-reverse">
+    <div class="text-content">
+      <h2>高度自定义的颜色风格与界面</h2>
+      <p>多种主题色可选，随心切换。文字颜色与 Mica 背景色调同步调整，打造属于你的个性化工作空间。</p>
+      <div class="color-picker-container">
+        <button 
+          v-for="color in colors" 
+          :key="color.value"
+          class="color-rect"
+          :style="{ backgroundColor: color.value }"
+          :class="{ active: currentColor === color.value }"
+          @click="setThemeColor(color.value, color.hue)"
+          :title="color.name"
+        ></button>
+      </div>
+    </div>
+    <div class="image-content">
+      <img src="/screenshot-main.webp" alt="自定义颜色演示" />
+    </div>
   </div>
 </div>
 
@@ -515,7 +628,7 @@ import { VPButton } from 'vitepress/theme'
 </div>
 
 <!-- 底部 -->
-<div style="text-align: center; padding: 100px 24px; background-color: var(--vp-c-bg-soft); border-top: 1px solid var(--vp-c-divider);">
+<div style="text-align: center; padding: 100px 24px; background-color: var(--vp-c-bg-soft-transparent); border-top: 1px solid var(--vp-c-divider);">
   <h2 style="font-size: 36px; font-weight: 800; margin-bottom: 32px; letter-spacing: -1px;">立即开始使用 TabPaint</h2>
   <div class="download-group">
     <a href="https://github.com/zouxiaofei1/TabPaint/releases" class="download-btn">
