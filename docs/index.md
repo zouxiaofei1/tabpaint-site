@@ -130,6 +130,33 @@ import { VPButton } from 'vitepress/theme'
   flex-direction: row-reverse;
 }
 
+.hero-section {
+  flex-direction: column !important;
+  text-align: center;
+  padding-top: 0px !important;
+  padding-bottom: 0 !important;
+  max-width: 1200px !important;
+  gap: 0 !important;
+}
+
+.hero-section .text-content {
+  max-width: 800px;
+  margin: 0 auto;
+  flex: none;
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero-section .image-content {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
 .text-content {
   flex: 1;
 }
@@ -143,17 +170,17 @@ import { VPButton } from 'vitepress/theme'
 }
 
 .text-content p {
-  font-size: 18px;
+  font-size: 18px !important ;
   line-height: 1.7;
   color: var(--vp-c-text-2);
 }
 
 /* Hero 区域特定样式 */
 .hero-title {
-  font-size: 84px;
+  font-size: 46px !important;
   font-weight: 900;
   line-height: 1;
-  margin: 0 0 16px 0;
+  margin: -120px 0 16px 0;
   color: var(--tp-c-brand);
   letter-spacing: -2px;
 }
@@ -199,18 +226,98 @@ import { VPButton } from 'vitepress/theme'
   transform: translateY(-1px);
 }
 
+/* 下载按钮组容器 */
+.download-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 8px;
+  flex-wrap: wrap;
+}
+
+.download-icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+  filter: brightness(0) invert(1);
+}
+
+.extra-links {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.github-link-icon {
+  width: 32px;
+  height: 32px;
+  transition: opacity 0.2s;
+  display: flex;
+  align-items: center;
+}
+
+.github-link-icon:hover {
+  opacity: 0.8;
+}
+
+.github-link-icon img {
+  width: 100%;
+  height: 100%;
+}
+
+.backup-link {
+  font-size: 14px;
+  color: var(--vp-c-text-2);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.backup-link:hover {
+  color: var(--tp-c-brand);
+}
+
+
+
 .image-content {
   flex: 1.3;
-  border-radius: 20px;
+  border-radius: 12px;
   overflow: hidden;
-  box-shadow: var(--tp-shadow-heavy);
   border: 1px solid var(--vp-c-divider);
+  position: relative;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.image-content::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url('/mica-background.webp');
+  background-size: cover;
+  background-position: center;
+  filter: blur(5px) brightness(1.0);
+  z-index: -1;
+  opacity: 0.9;
+}
+
+/* 叠一层半透明白/黑，增加 Mica 的通透感 */
+
+
+.dark .image-content::after {
+  background: rgba(30, 30, 30, 0.4);
 }
 
 .image-content img {
   width: 100%;
   height: auto;
   display: block;
+  border-radius: 12px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 /* 手机端适配 */
@@ -220,6 +327,21 @@ import { VPButton } from 'vitepress/theme'
     text-align: center;
     padding: 60px 24px;
     gap: 40px;
+  }
+
+  .hero-section {
+    height: auto !important;
+    min-height: auto !important;
+    padding-top: 40px !important;
+    overflow: visible !important;
+  }
+
+  .hero-section .image-content {
+    border-radius: 12px !important;
+  }
+
+  .image-content {
+    padding: 20px;
   }
   
   .hero-title {
@@ -247,12 +369,23 @@ import { VPButton } from 'vitepress/theme'
 </style>
 
 <!-- 第一屏：主屏 -->
-<div class="section-container" style="padding-top: 60px;">
+<div class="section-container hero-section">
   <div class="text-content">
-    <h1 class="hero-title">TabPaint</h1>
-    <p class="hero-slogan">更好用的轻量图片编辑器</p>
+    <h1 class="hero-title">更好用的轻量图片编辑器</h1>
+    <p class="hero-slogan"></p>
     <p class="hero-desc">专为效率设计：多标签页管理、Tab 键极速切换看图/修图模式。集成 AI 抠图与无缝剪贴板，让截图处理快如闪电。</p>
-    <a href="https://github.com/zouxiaofei1/TabPaint/releases" class="download-btn">立即下载 Windows 版</a>
+    <div class="download-group">
+      <a href="https://github.com/zouxiaofei1/TabPaint/releases" class="download-btn">
+        <img src="/ic_fluent_arrow_download_48_regular.svg" class="download-icon" alt="下载" />
+        立即下载
+      </a>
+      <div class="extra-links">
+        <a href="https://github.com/zouxiaofei1/TabPaint" target="_blank" class="github-link-icon" title="GitHub">
+          <img src="/GitHub_Image.svg" alt="GitHub" />
+        </a>
+        <a href="" class="backup-link">备用下载链接</a>
+      </div>
+    </div>
   </div>
   <div class="image-content">
     <img src="/screenshot-main.webp" alt="Tabpaint 主界面" />
@@ -278,7 +411,7 @@ import { VPButton } from 'vitepress/theme'
     <h2>多标签页高效工作</h2>
     <p>像编辑代码一样编辑图片。10秒内连续处理多张截图，标签页管理让工作井井有条。</p>
   </div>
-  <div class="image-content" style="box-shadow: var(--tp-shadow-medium);">
+  <div class="image-content">
     <img src="/gif-multi-tab.gif" alt="多标签演示" />
   </div>
 </div>
@@ -302,7 +435,7 @@ import { VPButton } from 'vitepress/theme'
     <h2>无需手动保存的安心</h2>
     <p>拥有缓存目录机制，在一张图片上涂抹后关闭，再次打开改动依然存在。专注于创作，忘记“Ctrl+S”。</p>
   </div>
-  <div class="image-content" style="box-shadow: var(--tp-shadow-medium);">
+  <div class="image-content">
     <img src="/gif-autosave.gif" alt="自动保存演示" />
   </div>
 </div>
@@ -384,7 +517,18 @@ import { VPButton } from 'vitepress/theme'
 <!-- 底部 -->
 <div style="text-align: center; padding: 100px 24px; background-color: var(--vp-c-bg-soft); border-top: 1px solid var(--vp-c-divider);">
   <h2 style="font-size: 36px; font-weight: 800; margin-bottom: 32px; letter-spacing: -1px;">立即开始使用 TabPaint</h2>
-  <a href="https://github.com/zouxiaofei1/TabPaint/releases" class="download-btn">免费下载 Windows 版</a>
+  <div class="download-group">
+    <a href="https://github.com/zouxiaofei1/TabPaint/releases" class="download-btn">
+      <img src="/ic_fluent_arrow_download_48_regular.svg" class="download-icon" alt="下载" />
+      免费下载 Windows 版
+    </a>
+    <div class="extra-links">
+      <a href="https://github.com/zouxiaofei1/TabPaint" target="_blank" class="github-link-icon" title="GitHub">
+        <img src="/GitHub_Image.svg" alt="GitHub" />
+      </a>
+      <a href="" class="backup-link">备用下载链接</a>
+    </div>
+  </div>
   <p style="margin-top: 32px; font-size: 16px;">
     <a href="https://github.com/zouxiaofei1/TabPaint" target="_blank" style="color: var(--tp-c-brand); font-weight: 600; text-decoration: none;">
       在 GitHub 上关注我们 →
