@@ -7,15 +7,18 @@ titleTemplate: false
 <script setup>
 import { VPButton } from 'vitepress/theme'
 import { ref, onMounted } from 'vue'
+import AIBeforeAfter from '../.vitepress/theme/components/AIBeforeAfter.vue'
+import ImageCarousel from '../.vitepress/theme/components/ImageCarousel.vue'
 
 const colors = [
   { name: 'Windows Blue', value: '#0078d4', hue: '0deg' },
-  { name: 'Purple', value: '#646cff', hue: '250deg' },
-  { name: 'Green', value: '#42b883', hue: '150deg' },
-  { name: 'Orange', value: '#ff8c00', hue: '30deg' },
-  { name: 'Red', value: '#e81123', hue: '350deg' },
-  { name: 'Pink', value: '#ff69b4', hue: '320deg' }
+  { name: 'Purple', value: '#646cff', hue: '31deg' },
+  { name: 'Green', value: '#42b883', hue: '-53deg' },
+  { name: 'Orange', value: '#ff8c00', hue: '-173deg' },
+  { name: 'Red', value: '#e81123', hue: '149deg' },
+  { name: 'Pink', value: '#ff69b4', hue: '124deg' }
 ]
+
 
 const currentColor = ref('#0078d4')
 
@@ -63,19 +66,6 @@ onMounted(() => {
 </script>
 
 <style>
-:root {
-  --tp-c-brand: var(--vp-c-brand-1);
-  --tp-c-brand-hover: var(--vp-c-brand-2);
-  --tp-shadow-light: 0 4px 12px rgba(0, 0, 0, 0.05);
-  --tp-shadow-medium: 0 12px 24px rgba(0, 0, 0, 0.1);
-  --tp-shadow-heavy: 0 20px 40px rgba(0, 0, 0, 0.15);
-  --vp-c-bg-soft-transparent: rgba(246, 246, 247, 0);
-}
-
-.dark :root {
-  --vp-c-bg-soft-transparent: rgba(32, 32, 35, 0.7);
-}
-
 .shortcuts-section {
   max-width: 900px;
   margin: 100px auto;
@@ -541,7 +531,7 @@ onMounted(() => {
     </div>
   </div>
   <div class="image-content">
-    <img src="/screenshot-main.webp" alt="TabPaint Main Interface" />
+    <ImageCarousel />
   </div>
 </div>
 
@@ -577,7 +567,7 @@ onMounted(() => {
       <p>Clipboard Listening -> AI Background Removal -> Drag & Drop into Word/PPT. This sequence boosts your documentation efficiency by 10x.</p>
     </div>
     <div class="image-content">
-      <img src="/gif-ai-workflow.gif" alt="AI Workflow Demo" />
+      <AIBeforeAfter />
     </div>
   </div>
 </div>
@@ -688,34 +678,6 @@ onMounted(() => {
 
   </div>
   
-  <p class="more-tips">💡 More shortcuts can be found and customized in <strong>Settings - Shortcuts</strong></p>
+  <p class="more-tips"> More shortcuts can be found and customized in <strong>Settings - Shortcuts</strong></p>
 </div>
 
-<!-- Footer -->
-<div style="text-align: center; padding: 100px 24px; background-color: var(--vp-c-bg-soft-transparent); border-top: 1px solid var(--vp-c-divider);">
-  <h2 style="font-size: 36px; font-weight: 800; margin-bottom: 32px; letter-spacing: -1px;">Get Started with TabPaint Now</h2>
-  <div class="download-group">
-    <a href="https://github.com/zouxiaofei1/TabPaint/releases" class="download-btn">
-      <img src="/ic_fluent_arrow_download_48_regular.svg" class="download-icon" alt="Download" />
-      Free Download for Windows
-    </a>
-    <div class="extra-links">
-      <span class="version-tag">Latest v0.9.7</span>
-      <a href="https://github.com/zouxiaofei1/TabPaint" target="_blank" class="github-link-icon" title="GitHub">
-        <img src="/GitHub_Image.svg" alt="GitHub" />
-      </a>
-    </div>
-  </div>
-  <div class="download-sub-links">
-    <a href="https://github.com/zouxiaofei1/TabPaint/releases">Portable</a>
-    <span class="link-divider">|</span>
-    <a href="https://wwauw.lanzouu.com/iyL203muc8ne">Alternative Link</a>
-    <span class="link-divider">|</span>
-    <a href="/en/guide/start/installation">Installation Solutions</a>
-  </div>
-  <p style="margin-top: 32px; font-size: 16px;">
-    <a href="https://github.com/zouxiaofei1/TabPaint" target="_blank" style="color: var(--tp-c-brand); font-weight: 600; text-decoration: none;">
-      Follow us on GitHub →
-    </a>
-  </p>
-</div>

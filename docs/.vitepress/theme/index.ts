@@ -6,7 +6,6 @@ import LastUpdatedDays from './components/LastUpdatedDays.vue'
 import GiscusComment from './components/GiscusComment.vue'
 import ScrollProgress from './components/ScrollProgress.vue'
 import MobileBanner from './components/MobileBanner.vue'
-
 export default {
   extends: DefaultTheme,
   Layout: defineComponent({
@@ -59,6 +58,7 @@ export default {
 
       return () => h(DefaultTheme.Layout, null, {
         'layout-top': () => [h(MobileBanner), h(ScrollProgress)],
+
         'doc-footer-before': () => h(LastUpdatedDays),
         'doc-after': () => h(GiscusComment)
       })

@@ -9,18 +9,17 @@
 
 | 功能名称 | 默认快捷键 | 描述 |
 | :--- | :--- | :--- |
-| **切换看图/画图模式** | <kbd>Tab</kbd> | 在“看图模式”和“画图模式”之间切换 |
-| **上一张图片** | <kbd>Left</kbd> | 切换到列表中上一张图片 |
-| **下一张图片** | <kbd>Right</kbd> | 切换到列表中下一张图片 |
-| **全屏显示** | <kbd>F11</kbd> | 窗口全屏显示 |
+| **切换看图/画图模式** | <kbd>Tab</kbd> | \ |
+| **展开/收起图片栏** | <kbd>Shift + Tab</kbd> | \ |
+| **上一张图片** | <kbd>Left</kbd> | \ |
+| **下一张图片** | <kbd>Right</kbd> | \ |
+| **全屏显示** | <kbd>F11</kbd> | \ |
 | **向左旋转** | <kbd>Ctrl</kbd> + <kbd>L</kbd> | 图片逆时针旋转 90° |
 | **向右旋转** | <kbd>Ctrl</kbd> + <kbd>R</kbd> | 图片顺时针旋转 90° |
 | **垂直翻转** | <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>V</kbd> | 图片上下镜像翻转 |
 | **水平翻转** | <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>H</kbd> | 图片左右镜像翻转 |
 
 ## 基础绘图工具 (Basic Tools)
-
-快速切换常用的画笔和编辑工具。
 
 | 功能名称 | 默认快捷键 | 描述 |
 | :--- | :--- | :--- |
@@ -32,17 +31,15 @@
 | **文字工具** | <kbd>Ctrl</kbd> + <kbd>6</kbd> | 插入文本框 |
 | **画刷工具** | <kbd>Ctrl</kbd> + <kbd>7</kbd>  | 带有透明度和笔触效果的各式笔刷 |
 | **形状** | <kbd>Ctrl</kbd> + <kbd>8</kbd> | 绘制矩形、圆形、箭头等几何形状 |
-
+| **快速格式转换面板** | <kbd>Ctrl</kbd> + <kbd>Q</kbd> | 无需另存为更改当前图片格式 |
 
 ## 高级工具 (Advanced Tools)
-
-调用 TabPaint 特色的 AI 和辅助功能。
 
 | 功能名称 | 默认快捷键 | 描述 |
 | :--- | :--- | :--- |
 | **监听剪贴板开关** | <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>P</kbd> | 开启/关闭剪贴板自动导入功能 |
 | **AI 移除背景** | <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>1</kbd> | 智能去除背景 |
-| **色差抠图** | <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>2</kbd> | 色差抠图 |
+| **色差抠图** | <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>2</kbd> | 将色差过大的像素变为透明 |
 | **OCR 文字识别** | <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>3</kbd> | 识别图片中的文字并复制到剪贴板 |
 | **屏幕取色器** | <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>4</kbd> | 获取屏幕上任意位置的颜色 |
 | **复制当前颜色 HEX** | <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>5</kbd> | 将鼠标位置颜色以 HEX 格式复制 |
@@ -55,10 +52,9 @@
 | :--- | :--- | :--- |
 | **打开工作区** | <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>O</kbd> | 打开新文件夹，同时关闭现有所有图片 |
 | **粘贴为新标签页** | <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>V</kbd> | 将剪贴板内容直接作为新 Tab 打开 |
-
+| **打印** | <kbd>Ctrl</kbd> + <kbd>P</kbd> | \ |
 ## 图像效果 (Image Effects)
 
-对整张图片进行色彩调整。
 
 | 功能名称 | 默认快捷键 | 描述 |
 | :--- | :--- | :--- |
@@ -71,5 +67,5 @@
 
 ## 修改与重置
 
-- **如何修改**：点击对应功能右侧的录制框，直接在键盘上按下组合键（例如 <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>A</kbd>）。
-- **如何重置**：点击页面底部的 **“恢复默认快捷键”** ，恢复到安装时的初始状态。
+- **如何修改**：点击功能右侧的录制框，在键盘上按下组合键（如 <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>A</kbd>）。
+- **如何重置**：点击页面底部的 “恢复默认快捷键” 。

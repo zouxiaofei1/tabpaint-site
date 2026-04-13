@@ -25,7 +25,6 @@ export default defineConfig({
               items: [
                 { text: '安装与系统需求', link: '/guide/start/installation' },
                 { text: '界面概览', link: '/guide/start/interface' },
-                { text: '核心概念', link: '/guide/start/concepts' }
               ]
             },
             {

@@ -11,11 +11,11 @@ TabPaint 支持 **Windows 10** 和 **Windows 11** 操作系统。
 ## 版本选择
 
 
-| 文件名 | 版本类型 | 说明与建议 |
+| 文件名 | 版本类型 | 体积 |
 | :--- | :--- | :--- |
-| **TabPaint_Setup_Full.exe** | 完整安装包 | 安装包内**已包含**运行库，体积稍大 |
-| **TabPaint_Setup_Lite.exe** | 在线安装包 | 安装包体积小，自动从微软服务器下载运行库 |
-| **TabPaint_Portable.zip** | 绿色便携版 | 解压即用，需手动安装运行库 |
+| [TabPaint_Setup_Full.exe](https://github.com/zouxiaofei1/TabPaint/releases/download/v0.9.7.0/TabPaint_Setup_v0.9.7.0_Full.exe)  | 完整安装包 | 75MB |
+| [TabPaint_Setup_Lite.exe](https://github.com/zouxiaofei1/TabPaint/releases/download/v0.9.7.0/TabPaint_Setup_v0.9.7.0_Lite.exe) | 在线安装包 | 21MB | 
+| [TabPaint_Portable.zip](https://github.com/zouxiaofei1/TabPaint/releases/download/v0.9.7.0/TabPaint_v0.9.7.0_Portable.zip) | 绿色便携版 | 35MB |
 
 ## 安装步骤
 

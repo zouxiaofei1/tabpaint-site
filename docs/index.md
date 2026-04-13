@@ -7,14 +7,17 @@ titleTemplate: false
 <script setup>
 import { VPButton } from 'vitepress/theme'
 import { ref, onMounted } from 'vue'
+import TabSwitchComparison from './.vitepress/theme/components/TabSwitchComparison.vue'
+import AIBeforeAfter from './.vitepress/theme/components/AIBeforeAfter.vue'
+import ImageCarousel from './.vitepress/theme/components/ImageCarousel.vue'
 
 const colors = [
   { name: 'Windows Blue', value: '#0078d4', hue: '0deg' },
-  { name: 'Purple', value: '#646cff', hue: '250deg' },
-  { name: 'Green', value: '#42b883', hue: '150deg' },
-  { name: 'Orange', value: '#ff8c00', hue: '30deg' },
-  { name: 'Red', value: '#e81123', hue: '350deg' },
-  { name: 'Pink', value: '#ff69b4', hue: '320deg' }
+  { name: 'Purple', value: '#646cff', hue: '31deg' },
+  { name: 'Green', value: '#42b883', hue: '-53deg' },
+  { name: 'Orange', value: '#ff8c00', hue: '-173deg' },
+  { name: 'Red', value: '#e81123', hue: '149deg' },
+  { name: 'Pink', value: '#ff69b4', hue: '124deg' }
 ]
 
 const currentColor = ref('#0078d4')
@@ -63,19 +66,6 @@ onMounted(() => {
 </script>
 
 <style>
-:root {
-  --tp-c-brand: var(--vp-c-brand-1);
-  --tp-c-brand-hover: var(--vp-c-brand-2);
-  --tp-shadow-light: 0 4px 12px rgba(0, 0, 0, 0.05);
-  --tp-shadow-medium: 0 12px 24px rgba(0, 0, 0, 0.1);
-  --tp-shadow-heavy: 0 20px 40px rgba(0, 0, 0, 0.15);
-  --vp-c-bg-soft-transparent: rgba(246, 246, 247, 0);
-}
-
-.dark :root {
-  --vp-c-bg-soft-transparent: rgba(32, 32, 35, 0.7);
-}
-
 .shortcuts-section {
   max-width: 900px;
   margin: 100px auto;
@@ -179,8 +169,8 @@ onMounted(() => {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 60px;
-  padding: 100px 24px;
+  gap: 40px;
+  padding: 60px 24px;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -545,7 +535,7 @@ onMounted(() => {
     </div>
   </div>
   <div class="image-content">
-    <img src="/screenshot-main.webp" alt="Tabpaint 主界面" />
+    <ImageCarousel />
   </div>
 </div>
 
@@ -557,7 +547,7 @@ onMounted(() => {
       <p>按下 Tab 键，瞬间在沉浸式看图和全功能绘图模式间切换。既是看图软件，也是你的轻量级修图工坊。</p>
     </div>
     <div class="image-content">
-      <img src="/gif-tab-switch.gif" alt="Tab 切换演示" />
+      <TabSwitchComparison />
     </div>
   </div>
 </div>
@@ -573,33 +563,23 @@ onMounted(() => {
   </div>
 </div>
 
-<!-- 第四屏：剪切板 -> AI抠图 -> Word -->
+<!-- 第四屏：AI -->
 <div style="background-color: var(--vp-c-bg-soft-transparent);">
   <div class="section-container section-reverse">
     <div class="text-content">
-      <h2>AI 赋能，打通最后一步</h2>
-      <p>监听剪切板 -> AI 智能抠图 -> 直接拖拽进 Word/PPT。这一套连招，让你的文档配图效率提升十倍。</p>
+      <h2>AI 模型，打通最后一步</h2>
+      <p>监听剪切板 -> AI 智能抠图 -> 直接拖拽进 Word/PPT， 让你的文档配图效率提升十倍。</p>
     </div>
     <div class="image-content">
-      <img src="/gif-ai-workflow.gif" alt="AI 工作流演示" />
+      <AIBeforeAfter />
     </div>
   </div>
 </div>
 
-<!-- 第五屏：无需保存的极简画板 -->
-<div class="section-container">
-  <div class="text-content">
-    <h2>无需手动保存</h2>
-    <p>拥有缓存目录机制，在一张图片上涂抹后关闭，再次打开改动依然存在。专注于创作，忘记“Ctrl+S”。</p>
-  </div>
-  <div class="image-content">
-    <img src="/gif-autosave.gif" alt="自动保存演示" />
-  </div>
-</div>
 
-<!-- 第六屏：高度自定义 -->
+<!-- 第五屏：高度自定义 -->
 <div style="background-color: var(--vp-c-bg-soft-transparent);">
-  <div class="section-container section-reverse">
+  <div class="section-container">
     <div class="text-content">
       <h2>高度自定义的颜色风格与界面</h2>
       <p>多种主题色可选，随心切换。文字颜色与 Mica 背景色调同步调整，打造属于你的个性化工作空间。</p>
@@ -620,7 +600,7 @@ onMounted(() => {
     </div>
   </div>
 </div>
-
+<!-- 第六屏： 快捷键 -->
 <div class="shortcuts-section">
   <h2 class="shortcuts-title">常用快捷键速查</h2>
   
@@ -692,34 +672,6 @@ onMounted(() => {
 
   </div>
   
-  <p class="more-tips">💡 更多快捷键可在 <strong>设置 - 快捷键设置</strong> 中查看和自定义</p>
+  <p class="more-tips"> 更多快捷键可在 <strong>设置 - 快捷键设置</strong> 中查看和自定义</p>
 </div>
 
-<!-- 底部 -->
-<div style="text-align: center; padding: 100px 24px; background-color: var(--vp-c-bg-soft-transparent); border-top: 1px solid var(--vp-c-divider);">
-  <h2 style="font-size: 36px; font-weight: 800; margin-bottom: 32px; letter-spacing: -1px;">立即开始使用 TabPaint</h2>
-  <div class="download-group">
-    <a href="https://github.com/zouxiaofei1/TabPaint/releases" class="download-btn">
-      <img src="/ic_fluent_arrow_download_48_regular.svg" class="download-icon" alt="下载" />
-      免费下载 Windows 版
-    </a>
-    <div class="extra-links">
-      <span class="version-tag">最新版 v0.9.7</span>
-      <a href="https://github.com/zouxiaofei1/TabPaint" target="_blank" class="github-link-icon" title="GitHub">
-        <img src="/GitHub_Image.svg" alt="GitHub" />
-      </a>
-    </div>
-  </div>
-  <div class="download-sub-links">
-    <a href="https://github.com/zouxiaofei1/TabPaint/releases">绿色版</a>
-    <span class="link-divider">|</span>
-    <a href="https://wwauw.lanzouu.com/iyL203muc8ne">备用下载链接</a>
-    <span class="link-divider">|</span>
-    <a href="/guide/start/installation">安装失败解决方案</a>
-  </div>
-  <p style="margin-top: 32px; font-size: 16px;">
-    <a href="https://github.com/zouxiaofei1/TabPaint" target="_blank" style="color: var(--tp-c-brand); font-weight: 600; text-decoration: none;">
-      在 GitHub 上关注我们 →
-    </a>
-  </p>
-</div>
